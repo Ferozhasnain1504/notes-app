@@ -10,7 +10,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-connectDB();
 
 // middleware 
 app.use(express.json()); // to parse the incoming JSON data
@@ -18,7 +17,9 @@ app.use(rateLimit); // to apply rate limiting middleware
 
 app.use("/api/notes", notesRoutes);
 
-
-app.listen(5001, () => {
+connectDB().then(() => {
+    app.listen(5001, () => {
     console.log(`Server is running on port 5001: \n http://localhost:${PORT}`);
-})
+    })
+});
+

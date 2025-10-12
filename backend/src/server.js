@@ -3,6 +3,7 @@ import express from "express";
 import notesRoutes from "./routes/notesRoutes.js";   
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
+import rateLimit from "./middleware/ratelimiter.js";
 
 dotenv.config();  
 
@@ -13,15 +14,7 @@ connectDB();
 
 // middleware 
 app.use(express.json()); // to parse the incoming JSON data
-
-app.use((req, res,next) => {
-    console.log(`Middleware running...
-    We have a request\n
-    Method : ${req.method}\n
-    URL : ${req.url}\n`);
-    next()
-});
-
+app.use(rateLimit); // to apply rate limiting middleware
 
 app.use("/api/notes", notesRoutes);
 

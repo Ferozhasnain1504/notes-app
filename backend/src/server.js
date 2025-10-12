@@ -14,6 +14,15 @@ connectDB();
 // middleware 
 app.use(express.json()); // to parse the incoming JSON data
 
+app.use((req, res,next) => {
+    console.log(`Middleware running...
+    We have a request\n
+    Method : ${req.method}\n
+    URL : ${req.url}\n`);
+    next()
+});
+
+
 app.use("/api/notes", notesRoutes);
 
 

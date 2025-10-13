@@ -12,7 +12,7 @@ const Navbar = () => {
                 </h1>
 
                 <div className = "flex items-center gap-4">
-                    <Link to={"/create"} className = "btn btn-ghost">
+                    <Link to={"/create"} className = "btn btn-primary">
                         <PlusIcon className = "size-5" />
                         <span>New Note</span>
                     </Link>

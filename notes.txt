@@ -1,0 +1,34 @@
+/:id -> path parameters
+   accessed via req.params
+   returns object 
+   /:123 -> {id: "123"}
+
+/?param=val -> query parameters
+   accessed via req.query
+   returns object
+   /?foo=bar -> {foo : "bar"}
+
+⚙️ Middleware
+   ⭐ middleware is a function that runs between the request and response
+
+🛑 Rating Limiting
+   ⭐ Rate limiting is a technique used to control how many requests a user can make to a server within a specific time frame.
+   
+   ⭐ status code - 429 ( Too many request )
+   🔥 we use 📌upstash for rate limiting
+
+🚚 React router
+    ⭐ React Router is like the GPS system for your React app—it helps users navigate between   different views or pages based on the URL they visi
+    🔥 we use 📌react-router for routing between pages   
+   
+🔔 React HOT Toast
+    ⭐ React Hot Toast is a lightweight, blazing-fast notification library for React apps.
+    🔥 we use 📌 hot toast for notification
+
+🫱🏻‍🫲🏼 CORS (Cross-Origin Resourse Sharing)
+    ⭐ CORS is a Browser-security rule
+    ⭐ It’s a security feature built into web browsers that controls which websites can talk to which servers.
+    🔥Example:
+      🧑‍💻 Frontend: http://localhost:5173
+      🥷 Backend: http://localhost:5001
+    ⭐ if the frontend and backend has different orgin (because of port), so the browser enforces CORS
